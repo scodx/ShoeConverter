@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var mensSizeTextField: UITextField!
+    @IBOutlet weak var mensConvertedSizeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func convertButtonPressed(sender: UIButton) {
+        
+        var mensSize = mensSizeTextField.text.toInt()!
+        let conversionConstant = 30
+        
+        mensConvertedSizeLabel.hidden = false
+        mensConvertedSizeLabel.text = "\(mensSize + conversionConstant) in European Shoe Size"
+        
+    }
 
 }
 
